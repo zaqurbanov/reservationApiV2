@@ -7,9 +7,10 @@ const router = require('./routes/router');
 const errorHandler = require('./middleware/errorHandler');
 const apiLimiter = require('./enums/rateLimiter');
 const { swaggerUi, swaggerDocs } = require('./swagger');
+const cors = require('cors')
 mongo.connect()  
 
-
+app.use(cors())
 app.use(cookieParser());
 app.use(express.json())
 
